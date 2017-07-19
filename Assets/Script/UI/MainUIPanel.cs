@@ -16,7 +16,6 @@ public class MainUIPanel : MonoBehaviour {
 	}
 
 	public void OnClickBagBtn() {
-		Debug.Log("ClickBagBtn");
 		if (BagBtnClickEvent != null) {
 			BagBtnClickEvent();
 		}

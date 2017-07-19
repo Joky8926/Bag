@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class BagPanel : MonoBehaviour {
 	public UIGrid _uiGrid;
-	private List<GameObject> lstPiece;
+	private List<UIPiece> lstPiece;
 	private const int MAX_COUNT = 30;
 	private const string PRE_PATH = "Prefab/Piece";
 
 	void Awake() {
-		lstPiece = new List<GameObject>();
+		lstPiece = new List<UIPiece>();
 		InitGrid();
+		InitBagData();
 		this.gameObject.SetActive(false);
 		MainUIPanel.BagBtnClickEvent += ShowPanel;
 	}
@@ -23,12 +24,23 @@ public class BagPanel : MonoBehaviour {
 		this.gameObject.SetActive(false);
 	}
 
+	private void InitBagData() {
+		List<ItemBase> lstItem = BagMgr.instance.GetAllItem();
+		if (lstItem.Count > lstPiece.Count) {
+			Debug.LogError("背包中的物品数超过格子数量！！！");
+		}
+		for (int i = 0; i < lstItem.Count && i < lstPiece.Count; i++) {
+			lstPiece[i].Init(lstItem[i]);
+		}
+	}
+
 	private void InitGrid() {
-		for (int  i = 0; i < MAX_COUNT; i++) {
+		for (int i = 0; i < MAX_COUNT; i++) {
 			GameObject goPiece = CreatePiece();
 			goPiece.transform.parent = _uiGrid.transform;
 			goPiece.transform.localScale = Vector3.one;
-			lstPiece.Add(goPiece);
+			UIPiece uiPiece = goPiece.GetComponent<UIPiece>();
+			lstPiece.Add(uiPiece);
 		}
 	}
 

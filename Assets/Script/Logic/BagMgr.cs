@@ -33,4 +33,8 @@ public class BagMgr {
 			}
 		}
 	}
+
+	public List<ItemBase> GetAllItem() {
+		return lstItem;
+	}
 }

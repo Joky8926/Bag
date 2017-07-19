@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4452318609068462}
   - component: {fileID: 114154380700165980}
+  - component: {fileID: 114008104739073382}
   m_Layer: 8
   m_Name: Piece
   m_TagString: Untagged
@@ -174,6 +175,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 52, y: 52, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114008104739073382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521121294406538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d49a30ee2994413b3825f328d945c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconSprite: {fileID: 114177038529076560}
+  nameLabel: {fileID: 114584877307963246}
+  countLabel: {fileID: 114515157310385682}
+  otherLabel: {fileID: 114280158507078438}
 --- !u!114 &114154380700165980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -480,7 +496,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 0.15384616
+  aspectRatio: 2.5384614
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}

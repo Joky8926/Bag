@@ -11,6 +11,7 @@ public class Test : MonoBehaviour {
 		Debug.Log(Resources.Load("Data/string_conf"));
 		TextAsset txt = Resources.Load("Data/string_conf") as TextAsset;
 		Debug.Log(txt.text);
+		BagMgr.instance.PrintItems();
 	}
 	
 	// Update is called once per frame
